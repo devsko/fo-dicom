@@ -1,4 +1,5 @@
 @echo off
+pushd %~dp0
 
 echo.
 echo fo-dicom NuGet package builder
@@ -26,7 +27,7 @@ forfiles /p %output% /m *.nupkg /c "cmd /c del @file"
 echo.
 echo Creating packages...
 
-forfiles /m fo-dicom*.nuspec /c "cmd /c nuget.exe pack @File -Version %version% -OutputDirectory %output%"
+forfiles /m fo-dicom.Universal.nuspec /c "cmd /c nuget.exe pack @File -Version %version% -OutputDirectory %output%"
 
 pause
 

@@ -1,4 +1,5 @@
 @echo off
+pushd %~dp0
 
 echo.
 echo fo-dicom NuGet package publisher
@@ -19,6 +20,6 @@ echo Current directory: %current%
 echo Output  directory: %output%
 echo.
 
-forfiles /p %output% /m *.nupkg /c "cmd /c %current%\NuGet.exe push @file -Source https://www.nuget.org/api/v2/package"
+forfiles /p %output% /m *.nupkg /c "cmd /c %current%\NuGet.exe push @file -ApiKey VSTS -Source https://dktechnologies.pkgs.visualstudio.com/_packaging/dktech/nuget/v3/index.json"
 
 pause

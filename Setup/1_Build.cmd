@@ -1,6 +1,6 @@
 @echo off
 
-@set "VS17COMMONTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\Tools\"
+@set "VS17COMMONTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\Preview\Enterprise\Common7\Tools\"
 @if NOT EXIST "%VS17COMMONTOOLS%" goto error_VS17_notfound
 
 echo.
@@ -17,12 +17,16 @@ echo.
 timeout /T 5
 
 @call "%VS17COMMONTOOLS%VsDevCmd.bat"
+pushd %~dp0
 
 @cd ..
-@.\Setup\nuget.exe restore Dicom.Full.sln -source https://www.nuget.org/api/v2
+@.\Setup\nuget.exe restore Dicom.Full.sln
 @msbuild "DICOM.Full.sln" /t:Rebuild /p:Configuration=Release;Platform="Any CPU"
+pause
 @msbuild "DICOM.Full.sln" /t:Rebuild /p:Configuration=Release;Platform="x86"
+pause
 @msbuild "DICOM.Full.sln" /t:Rebuild /p:Configuration=Release;Platform="x64"
+pause
 @msbuild "DICOM.Full.sln" /t:Rebuild /p:Configuration=Release;Platform="ARM"
 
 @goto end

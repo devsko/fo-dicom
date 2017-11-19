@@ -92,7 +92,7 @@ namespace Dicom.Network
 
         #region Support Data
 
-        public static readonly IEnumerable<object> ResultsAcceptedTransferSyntaxes = new[]
+        public static readonly IEnumerable<object[]> ResultsAcceptedTransferSyntaxes = new[]
         {
             new object[] { DicomPresentationContextResult.Accept, DicomTransferSyntax.DeflatedExplicitVRLittleEndian },
             new object[] { DicomPresentationContextResult.Accept, DicomTransferSyntax.JPEG2000Lossless },
