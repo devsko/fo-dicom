@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>fo-dicom.NetCore3</id>
+    <version>$version$</version>
+    <title>Fellow Oak DICOM .NET Core Library</title>
+    <authors>fo-dicom contributors</authors>
+    <license type="expression">MS-PL</license>
+    <projectUrl>https://github.com/fo-dicom/fo-dicom</projectUrl>
+    <iconUrl>https://lh3.googleusercontent.com/-Fq3nigRUo7U/VfaIPuJMjfI/AAAAAAAAALo/7oaLrrTBhnw/s1600/Fellow%2BOak%2BSquare%2BTransp.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core fo-dicom library for .NET Core 3.</description>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="System.ComponentModel.Composition" version="4.5.0" />
+      <dependency id="System.Data.SqlClient" version="4.6.0" />
+      <dependency id="System.Data.Odbc" version="4.5.0" />
+      <dependency id="System.IO.FileSystem" version="4.3.0" />
+      <dependency id="System.Net.NetworkInformation" version="4.3.0" />
+      <dependency id="System.Net.Security" version="4.3.2" />
+      <dependency id="System.Runtime.Serialization.Primitives" version="4.3.0" />
+      <dependency id="System.Text.Encoding.CodePages" version="4.5.1" />
+      <dependency id="System.Threading.Tasks.Parallel" version="4.3.0" />
+      <dependency id="System.Runtime.Numerics" version="4.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Targets\fo-dicom.NetCore3.targets" target="build\netcoreapp3.0" />
+    <file src="..\Native\Desktop\bin\x86\Release\DICOM.Native\Dicom.Native.dll" target="build\netcoreapp3.0" />
+    <file src="..\Native\Desktop\bin\x64\Release\DICOM.Native64\Dicom.Native64.dll" target="build\netcoreapp3.0" />
+    <file src="..\Platform\NetCore3\bin\Release\netcoreapp3.0\Dicom.Core.dll" target="lib\netcoreapp3.0" />
+    <file src="..\Platform\NetCore3\bin\Release\netcoreapp3.0\Dicom.Core.pdb" target="lib\netcoreapp3.0" />
+    <file src="..\Platform\NetCore3\bin\Release\netcoreapp3.0\Dicom.Core.xml" target="lib\netcoreapp3.0" />
+  </files>
+</package>
