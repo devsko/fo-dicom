@@ -1,12 +1,13 @@
 #### v.4.0.2 (TBD)
+* Bug fix: prevent resource leak when DesktopNetworkListener waits for new TCP clients
 * Updated to DICOM Dictionary 2019a (#724)
-* Add pure managed JpegLosses Decoder to DICOM.NetCore project
 * Upgraded native libraries to MSVC platform toolset v141 (VS 2017) (#814)
 * Replaced deprecated licenseUrl tags in NuGet specification files (#813)
 * Add validation of content when adding DICOM elements to DicomDataset. This validation is skipped when reading files or receiving data via network.
 * Bug Fix: Fixed wrong interpretation and application of LUT for PALETTE COLOR images (#817)
 * Bug Fix: Allow any SOP Class to be set as Affected SOP CLass in C-FIND requests (#808)
-* Added Modality LUT Sequence and VOI LUT Sequence functionality when generating a DICOM Image.
+* Bug Fix: Anonymizer throws exception on private tags (#771)
+* Bug Fix: Linear windowing wrong in corner cases (#816)
 
 #### v.4.0.1 (3/13/2019)
 * change IFileReference and IByteBuffer to have offset of type long so that big files can be processed (#743)
