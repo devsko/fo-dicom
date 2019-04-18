@@ -8,6 +8,7 @@
 * Bug Fix: Allow any SOP Class to be set as Affected SOP CLass in C-FIND requests (#808)
 * Bug Fix: Anonymizer throws exception on private tags (#771)
 * Bug Fix: Linear windowing wrong in corner cases (#816)
+* Bug Fix: Logging requests with very long private tags throws exception (#846)
 
 #### v.4.0.1 (3/13/2019)
 * change IFileReference and IByteBuffer to have offset of type long so that big files can be processed (#743)
