@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="Warn-fo-dicom-platform">
-    <Message Importance="high" Text="fo-dicom native libraries require the target platform to be explicitly specified." />
-    <Message Importance="high" Text="Change '$(MSBuildProjectName)' Platform Target Build Project Property from '$(PlatformTarget)' to either ...x86 or ...x64 to remove this message." />
-  </Target>
-  <Choose>
-    <When Condition="$(PlatformTarget.EndsWith('x64'))">
-      <ItemGroup>
-        <Reference Include="Dicom.Native64">
-          <HintPath>$(MSBuildThisFileDirectory)Dicom.Native64.dll</HintPath>
-        </Reference>
-        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)Dicom.Native64.dll" />
-      </ItemGroup>
-    </When>
-    <When Condition="$(PlatformTarget.EndsWith('x86'))">
-      <ItemGroup>
-        <Reference Include="Dicom.Native">
-          <HintPath>$(MSBuildThisFileDirectory)Dicom.Native.dll</HintPath>
-        </Reference>
-        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)Dicom.Native.dll" />
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <BuildDependsOn>
-          $(BuildDependsOn);
-          Warn-fo-dicom-platform
-        </BuildDependsOn>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Dicom.Native64.dll" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="$(MSBuildThisFileDirectory)Dicom.Native.dll" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
